@@ -9,7 +9,7 @@ source:
   url: https://github.com/tschoonj/xraylib/archive/xraylib-{{ version }}.tar.gz
   sha256: 4f4ab07f47619fa5458efbcd5ea51cd2c76c11a474ef869432235719c5bcdb41
   patches:
-    - conda-windows.patch # [win]
+    - conda-windows.patch  # [win]
 
 build:
   number: 0
@@ -23,16 +23,18 @@ requirements:
     - scipy >=0.7.0
     - cython
     - swig
-    - autoconf # [not win]
-    - libtool # [not win]
-    - automake # [not win]
-    - m2-bash # [win]
-    - m2-autoconf # [win]
-    - m2-automake-wrapper # [win]
-    - m2-libtool # [win]
-    - m2-make # [win]
-    - m2w64-binutils # [win]
-    - m2w64-gcc # [win]
+    - autoconf  # [not win]
+    - libtool  # [not win]
+    - automake  # [not win]
+    - m2-bash  # [win]
+    - m2-autoconf  # [win]
+    - m2-automake-wrapper  # [win]
+    - m2-libtool  # [win]
+    - m2-make  # [win]
+    - m2w64-binutils  # [win]
+    - m2w64-gcc  # [win]
+    - m2w64-toolchain  # [win]
+    - m2w64-tools-git  # [win]
 
   run:
     - python
@@ -41,7 +43,7 @@ requirements:
 
 test:
   commands:
-    - xraylib # [not win]
+    - xraylib  # [not win]
   imports:
     - xraylib
 
