@@ -14,7 +14,7 @@ index ec51f02..3f0180f 100644
    SetErrorMessages(1);
    fclose(f);
  
-+  sleep(1);
++  sleep(10);
 +
    return 0;
  }
