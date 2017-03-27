@@ -24,14 +24,14 @@ requirements:
     - numpy x.x
     - scipy >=0.7.0
     - cython
-    - swig  # [nog win]
+    - swig  # [not win]
     - autoconf  # [not win]
     - libtool  # [not win]
     - automake  # [not win]
     - m2-bash  # [win]
     - m2-autoconf  # [win]
     - m2-automake-wrapper  # [win]
-    - m2-curl# [win]
+    - m2-curl  # [win]
     - m2-grep  # [win]
     - m2-libtool  # [win]
     - m2-make  # [win]
