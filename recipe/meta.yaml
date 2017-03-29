@@ -53,6 +53,7 @@ test:
     - xraylib  # [not win]
   imports:
     - xraylib
+    - xraylib_np
 
 about:
   license: BSD 3-Clause
