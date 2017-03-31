@@ -14,6 +14,7 @@ bash -lc "autoreconf -fi && ./configure --build=$GCC_ARCH --host=$GCC_ARCH --tar
 bash -lc "rm -r $PREFIX/include/xraylib"
 bash -lc "rm -f $PREFIX/bin/xraylib"
 bash -lc "rm -f $LIBRARY_BIN/xraylib"
+bash -lc "cd `cygpath -u $SP_DIR` && cp _xraylib.pyd _xraylib.dll && ldd _xraylib.dll && file _xraylib.dll"
 bash -lc "rm `cygpath -u $SP_DIR`/*.la"
 bash -lc "rm `cygpath -u $SP_DIR`/*.dll.a"
 bash -lc "rm `cygpath -u $SP_DIR`/xrayhelp.py*"
