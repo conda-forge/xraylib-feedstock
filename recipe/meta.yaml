@@ -51,8 +51,8 @@ test:
   commands:
     # The xraylib command does not work on Anaconda, as it would not be able to find the help text files. In my xraylib SDK for Windows, I rely on the registry to find them as the installer writes entries in it, but not sure how that would work here.
     - xraylib  # [not win]
-    - conda inspect linkages -p $PREFIX wcslib  # [not win]
-    - conda inspect objects -p $PREFIX wcslib  # [osx]
+    - conda inspect linkages -p $PREFIX $PACKAGE  # [not win]
+    - conda inspect objects -p $PREFIX $PACKAGE  # [osx]
   imports:
     - xraylib
     - xraylib_np
