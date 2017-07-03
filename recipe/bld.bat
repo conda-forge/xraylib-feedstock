@@ -13,6 +13,7 @@ bash -lc "gendef ${PREFIX}/python${CONDA_PY}.dll && dlltool -l libpython${CONDA_
 bash -lc "autoreconf -fi && ./configure --disable-static --build=$GCC_ARCH --host=$GCC_ARCH --target=$GCC_ARCH --enable-python-integration --disable-fortran2003 --enable-python --prefix=`cygpath -u $PREFIX` --bindir=`cygpath -u $LIBRARY_BIN` --libdir=`cygpath -u $LIBRARY_LIB` PYTHON=`which python` SWIG=`which swig` CPPFLAGS=$EXTRA_FLAGS LIBS=-L$PWD && make && make install"
 bash -lc "mv $PREFIX/Library/usr/bin/libxrl-7.dll $PREFIX/Library/bin/"
 bash -lc "rm -r $PREFIX/include/xraylib"
+bash -lc "rm -rf $PREFIX/Library/tmp"
 bash -lc "rm `cygpath -u $LIBRARY_BIN`/xraylib"
 bash -lc "rm `cygpath -u $LIBRARY_LIB`/libxrl.la"
 bash -lc "rm `cygpath -u $LIBRARY_LIB`/pkgconfig/libxrl.pc"
