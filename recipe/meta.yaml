@@ -1,4 +1,4 @@
-{% set version = "3.3.0-test" %}
+{% set version = "3.3.0_test" %}
 
 package:
   name: xraylib
