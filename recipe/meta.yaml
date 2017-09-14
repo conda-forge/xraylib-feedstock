@@ -1,20 +1,17 @@
-{% set version = "3.2.0" %}
+{% set version = "3.3.0-test" %}
 
 package:
   name: xraylib
   version: {{ version }}
 
 source:
-  fn: xraylib-{{ version }}.tar.gz
-  url: https://github.com/tschoonj/xraylib/archive/xraylib-{{ version }}.tar.gz
-  sha256: 4f4ab07f47619fa5458efbcd5ea51cd2c76c11a474ef869432235719c5bcdb41
+  git_url: https://github.com/tschoonj/xraylib.git
+  git_rev: 15720fc26a3ebeee4b5e32879d57e7d9b247308c
   patches:
-    - conda-windows.patch  # [win]
     - xrayglob_inline.c.patch  # [win]
-    - swig-fix.patch  # [win]
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
