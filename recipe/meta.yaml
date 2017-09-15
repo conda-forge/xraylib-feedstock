@@ -28,6 +28,7 @@ requirements:
     - m2-autoconf  # [win]
     - m2-automake-wrapper  # [win]
     - m2-curl  # [win]
+    - m2-findutils # [win]
     - m2-grep  # [win]
     - m2-libtool  # [win]
     - m2-make  # [win]
@@ -42,7 +43,7 @@ requirements:
   run:
     - python
     - numpy x.x
-    - m2w64-gcc-libs-core
+    - m2w64-gcc-libs-core # [win]
 
 test:
   commands:
