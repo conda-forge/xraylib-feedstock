@@ -6,7 +6,8 @@ package:
 
 source:
   git_url: https://github.com/tschoonj/xraylib.git
-  git_rev: ecf17e64
+  # git_rev: ecf17e64
+  git_rev: c70d6b15
   #patches:
   #  - xrayglob_inline.c.patch  # [win]
 
