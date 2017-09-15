@@ -6,9 +6,9 @@ package:
 
 source:
   git_url: https://github.com/tschoonj/xraylib.git
-  git_rev: 15720fc26a3ebeee4b5e32879d57e7d9b247308c
-  patches:
-    - xrayglob_inline.c.patch  # [win]
+  git_rev: ecf17e64
+  #patches:
+  #  - xrayglob_inline.c.patch  # [win]
 
 build:
   number: 0
@@ -28,7 +28,7 @@ requirements:
     - m2-autoconf  # [win]
     - m2-automake-wrapper  # [win]
     - m2-curl  # [win]
-    - m2-findutils # [win]
+    - m2-findutils  # [win]
     - m2-grep  # [win]
     - m2-libtool  # [win]
     - m2-make  # [win]
