@@ -1,15 +1,12 @@
-{% set version = "3.3.0_test" %}
+{% set version = "3.3.0" %}
 
 package:
   name: xraylib
   version: {{ version }}
 
 source:
-  git_url: https://github.com/tschoonj/xraylib.git
-  # git_rev: ecf17e64
-  git_rev: c70d6b15
-  #patches:
-  #  - xrayglob_inline.c.patch  # [win]
+  url: http://lvserver.ugent.be/xraylib/xraylib-3.3.0.tar.gz
+  sha256: a22a73b8d90eb752b034bab1a4cf6abdd81b8c7dc5020bcb22132d2ee7aacd42
 
 build:
   number: 0
@@ -47,6 +44,8 @@ requirements:
     - m2w64-gcc-libs  # [win]
 
 test:
+  source_files:
+    - example/*.py
   commands:
     # The xraylib command does not work on Anaconda, as it would not be able to find the help text files. In my xraylib SDK for Windows, I rely on the registry to find them as the installer writes entries in it, but not sure how that would work here.
     - xraylib  # [not win]
@@ -55,6 +54,8 @@ test:
   imports:
     - xraylib
     - xraylib_np
+  - xrlexample5.py
+  - xrlexample13.py
 
 about:
   license: BSD 3-Clause
