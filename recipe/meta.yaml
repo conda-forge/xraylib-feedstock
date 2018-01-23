@@ -9,15 +9,17 @@ source:
   sha256: a22a73b8d90eb752b034bab1a4cf6abdd81b8c7dc5020bcb22132d2ee7aacd42
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - python
     - toolchain
     - setuptools
-    - numpy x.x
     - cython
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and py35]
+    - numpy 1.11.*  # [win and py36]
     - swig  # [not win]
     - autoconf  # [not win]
     - libtool  # [not win]
@@ -40,7 +42,9 @@ requirements:
 
   run:
     - python
-    - numpy x.x
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and py35]
+    - numpy >=1.11  # [win and py36]
     - m2w64-gcc-libs  # [win]
 
 test:
