@@ -14,14 +14,16 @@ Summary: A library for X-ray matter interaction cross sections for X-ray fluores
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/xraylib-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/xraylib-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/xraylib-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/xraylib-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/xraylib-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/xraylib-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/xraylib-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/xraylib-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/xraylib-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/xraylib-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/xraylib-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/xraylib-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/xraylib/badges/version.svg)](https://anaconda.org/conda-forge/xraylib)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/xraylib/badges/downloads.svg)](https://anaconda.org/conda-forge/xraylib)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-xraylib-green.svg)](https://anaconda.org/conda-forge/xraylib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xraylib.svg)](https://anaconda.org/conda-forge/xraylib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xraylib.svg)](https://anaconda.org/conda-forge/xraylib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xraylib.svg)](https://anaconda.org/conda-forge/xraylib) |
 
 Installing xraylib
 ==================
