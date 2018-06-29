@@ -9,18 +9,10 @@ source:
   sha256: a22a73b8d90eb752b034bab1a4cf6abdd81b8c7dc5020bcb22132d2ee7aacd42
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
-    - python
-    - toolchain
-    - setuptools
-    - cython
-    - numpy 1.8.*  # [not (win and (py35 or py36))]
-    - numpy 1.9.*  # [win and py35]
-    - numpy 1.11.*  # [win and py36]
-    - swig  # [not win]
     - autoconf  # [not win]
     - libtool  # [not win]
     - automake  # [not win]
@@ -34,18 +26,30 @@ requirements:
     - m2-make  # [win]
     - m2-sed  # [win]
     - m2-which  # [win]
+    - {{ compiler('fortran') }}        # [unix]
+    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ compiler('c') }}        # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('cxx') }}        # [unix]
+    - {{ compiler('m2w64_cxx') }}  # [win]
+  host:
+    - python
+    - setuptools
+    - cython
+    - numpy        # [not (win and (py35 or py36))]
+    - numpy        # [win and py35]
+    - numpy         # [win and py36]
+    - swig  # [not win]
     - m2w64-binutils  # [win]
     - m2w64-pcre  # [win]
     - m2w64-gcc  # [win]
-    - m2w64-toolchain  # [win]
     - m2w64-tools-git  # [win]
 
   run:
     - python
-    - numpy >=1.8  # [not (win and (py35 or py36))]
-    - numpy >=1.9  # [win and py35]
-    - numpy >=1.11  # [win and py36]
-    - m2w64-gcc-libs  # [win]
+    - {{ pin_compatible('numpy') }}   # [not (win and (py35 or py36))]
+    - {{ pin_compatible('numpy') }}   # [win and py35]
+    - {{ pin_compatible('numpy') }}   # [win and py36]
 
 test:
   commands:
