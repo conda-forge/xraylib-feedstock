@@ -36,12 +36,9 @@ requirements:
     - python
     - setuptools
     - cython
-    - numpy        # [not (win and (py35 or py36))]
-    - numpy        # [win and py35]
-    - numpy         # [win and py36]
+    - numpy
     - swig  # [not win]
     - m2w64-binutils  # [win]
-    - m2w64-pcre  # [win]
     - m2w64-gcc  # [win]
     - m2w64-tools-git  # [win]
 
