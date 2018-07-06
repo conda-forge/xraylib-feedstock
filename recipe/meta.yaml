@@ -13,19 +13,16 @@ build:
 
 requirements:
   build:
-    - autoconf  # [not win]
-    - libtool  # [not win]
-    - automake  # [not win]
     - m2-bash  # [win]
-    - m2-autoconf  # [win]
-    - m2-automake-wrapper  # [win]
     - m2-curl  # [win]
     - m2-findutils  # [win]
+    - m2-diffutils  # [win]
+    - m2-gawk  # [win]
     - m2-grep  # [win]
-    - m2-libtool  # [win]
     - m2-make  # [win]
     - m2-sed  # [win]
     - m2-which  # [win]
+    - m2-tar  # [win]
     - {{ compiler('fortran') }}        # [unix]
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ compiler('c') }}        # [unix]
