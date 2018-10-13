@@ -1,9 +1,7 @@
-c_compiler:
-- vs2008
-cxx_compiler:
-- vs2008
-fortran_compiler:
-- flang
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
 m2w64_c_compiler:
 - m2w64-toolchain
 m2w64_cxx_compiler:
@@ -18,7 +16,3 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - '2.7'
-zip_keys:
-- - python
-  - c_compiler
-  - cxx_compiler
