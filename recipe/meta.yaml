@@ -1,15 +1,15 @@
-{% set version = "3.3.0" %}
+{% set version = "3.99.0" %}
 
 package:
   name: xraylib
   version: {{ version }}
 
 source:
-  url: http://lvserver.ugent.be/xraylib/xraylib-{{version}}.tar.gz
-  sha256: a22a73b8d90eb752b034bab1a4cf6abdd81b8c7dc5020bcb22132d2ee7aacd42
+  git_url: https://github.com/tschoonj/xraylib.git
+  git_rev: 389fc740e477279eb65b6441645673b60aa97fab
 
 build:
-  number: 1002
+  number: 0
 
 requirements:
   build:
@@ -29,6 +29,13 @@ requirements:
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ compiler('cxx') }}        # [unix]
     - {{ compiler('m2w64_cxx') }}  # [win]
+    - bash  # [osx]
+    - autoconf  # [unix]
+    - automake  # [unix]
+    - libtool  # [unix]
+    - m2-autoconf  # [win]
+    - m2-automake-wrapper  # [win]
+    - m2-libtool  # [win]
   host:
     - python
     - setuptools
@@ -51,7 +58,6 @@ test:
     # to find the help text files. In my xraylib SDK for Windows, I rely on
     # the registry to find them as the installer writes entries in it, but
     # not sure how that would work here.
-    - xraylib  # [not win]
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
   imports:
