@@ -9,7 +9,7 @@ source:
   sha256: a22a73b8d90eb752b034bab1a4cf6abdd81b8c7dc5020bcb22132d2ee7aacd42
 
 build:
-  number: 1002
+  number: 1003
 
 requirements:
   build:
@@ -60,6 +60,8 @@ test:
 
 about:
   license: BSD 3-Clause
+  license_family: BSD
+  license_file: license_all.txt
   home: https://github.com/tschoonj/xraylib/wiki
   summary: A library for X-ray matter interaction cross sections for X-ray fluorescence applications
 
@@ -70,3 +72,4 @@ extra:
     - licode
     - tschoonj
     - CJ-Wright
+    - mrakitin
