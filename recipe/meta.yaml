@@ -34,7 +34,6 @@ requirements:
     - setuptools
     - cython
     - numpy
-    - ruby  # [osx]
     - swig  # [not win]
     - m2w64-binutils  # [win]
     - m2w64-gcc  # [win]
