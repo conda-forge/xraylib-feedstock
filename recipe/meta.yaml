@@ -58,7 +58,7 @@ test:
     - xraylib_np
 
 about:
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: license_all.txt
   home: https://github.com/tschoonj/xraylib/wiki
