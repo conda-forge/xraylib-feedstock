@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: http://lvserver.ugent.be/xraylib/xraylib-{{version}}.tar.gz
+  url: http://lvserver.ugent.be/xraylib/xraylib-{{ version }}.tar.gz
   sha256: 578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -49,12 +49,16 @@ test:
   commands:
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+    - if not exist %LIBRARY_LIB%\\pkgconfig\\libxrl.pc exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\libxrl.dll.a exit 1  # [win]
+    - if not exist %LIBRARY_INC%\\xraylib\\xraylib.h exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\\libxrl-11.dll exit 1  # [win]
   imports:
     - xraylib
     - xraylib_np
 
 about:
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: license_all.txt
   home: https://github.com/tschoonj/xraylib/wiki
