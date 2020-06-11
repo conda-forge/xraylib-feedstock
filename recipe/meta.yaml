@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://lvserver.ugent.be/xraylib/xraylib-{{version}}.tar.gz
+  url: http://lvserver.ugent.be/xraylib/xraylib-{{ version }}.tar.gz
   sha256: 578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d
 
 build:
