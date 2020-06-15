@@ -57,8 +57,8 @@ if [[ "$target_platform" == win* ]]; then
 	mv `cygpath -u $LIBRARY_LIB`/xrl.dll.lib `cygpath -u $LIBRARY_LIB`/xrl.lib
 	rm `cygpath -u $SP_DIR`/*.la
 	rm `cygpath -u $SP_DIR`/*.lib
-	cd swig-3.0.12 && make uninstall
-	cd pcre-8.42 && make uninstall
+	cd swig-3.0.12 && make uninstall && cd ..
+	cd pcre-8.42 && make uninstall && cd ..
 	rm -rf /mingw-w64/share/swig
 	rm -rf /mingw-w64/share/doc/pcre
 	rm -rf /mingw-w64/share/man/*/pcre*
