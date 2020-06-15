@@ -3,7 +3,7 @@ About xraylib
 
 Home: https://github.com/tschoonj/xraylib/wiki
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
