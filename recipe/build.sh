@@ -63,6 +63,10 @@ if [[ "$target_platform" == win* ]]; then
 	rm -rf /mingw-w64/share/doc/pcre
 	rm -rf /mingw-w64/share/man/*/pcre*
 else
+	unset CC_FOR_BUILD
+	unset CXX_FOR_BUILD
+	unset HOST
+	unset host_alias
 	./configure --enable-python --disable-perl --disable-java --disable-ruby \
 		    --disable-fortran2003 --disable-lua --prefix=$PREFIX
 	make
