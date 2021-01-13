@@ -35,8 +35,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
     - if not exist %LIBRARY_LIB%\\pkgconfig\\libxrl.pc exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\xrl.lib exit 1  # [win]
     - if not exist %LIBRARY_INC%\\xraylib\\xraylib.h exit 1  # [win]
