@@ -9,7 +9,7 @@ source:
   sha256: 578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   build:
@@ -36,6 +36,7 @@ requirements:
 test:
   commands:
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - test -f $PREFIX/include/xraylib/xraylib.mod  # [unix]
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
     - if not exist %LIBRARY_LIB%\\pkgconfig\\libxrl.pc exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\xrl.lib exit 1  # [win]
