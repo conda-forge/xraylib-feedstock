@@ -1,4 +1,4 @@
-{% set version = "4.0.0" %}
+{% set version = "4.1.0" %}
 
 package:
   name: xraylib
@@ -6,28 +6,25 @@ package:
 
 source:
   url: http://lvserver.ugent.be/xraylib/xraylib-{{ version }}.tar.gz
-  sha256: 578dfd69610b7274fc79e9e5ebe6a42faca5adeef50a12f87c038a29e9a8674d
+  sha256: 3b6b07118153369f8d55b197fa8f341e38cb5fabc611deb576d2c805be5db7c4
 
 build:
-  number: 6
+  number: 0
 
 requirements:
   build:
-    - autotools_clang_conda  # [win]
-    - m2-curl  # [win]
-    - m2-patch  # [win]
-    - m2-tar  # [win]
-    - m2-bzip2  # [win]
-    - make  # [unix]
     - {{ compiler('fortran') }}  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - meson
+    - ninja
     - python
     - setuptools
     - cython
     - numpy
-    - swig  # [not win]
+    - swig
+    - pkg-config  # [unix]
 
   run:
     - python
