@@ -14,6 +14,17 @@ if [[ "$target_platform" == "osx-arm64" && "$CONDA_BUILD_CROSS_COMPILATION" == "
   USE_FORTRAN=disabled
 fi
 
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+  # Bash scripts with shebang lines calling bash scripts
+  # are not supported. Since the python on PATH when cross
+  # compiling is a bash script, this breaks calling cython
+  # workaround is to change the shebang lie of cython to call
+  # python bash script indirectly.
+  mv $BUILD_PREFIX/bin/cython $BUILD_PREFIX/bin/cython.bak
+  echo '#!/usr/bin/env python' > $BUILD_PREFIX/bin/cython
+  cat $BUILD_PREFIX/bin/cython.bak >> $BUILD_PREFIX/bin/cython
+fi
+
 if [ -z "$MESON_ARGS" ]; then
   # for some reason this is not set on Linux
   MESON_ARGS="--buildtype=release --prefix=${PREFIX} --libdir=lib"
