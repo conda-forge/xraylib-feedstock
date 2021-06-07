@@ -1,6 +1,8 @@
 setlocal EnableDelayedExpansion
 @echo on
 
+set CI=true
+
 :: meson options
 set ^"MESON_OPTIONS=^
   --prefix="%LIBRARY_PREFIX%" ^

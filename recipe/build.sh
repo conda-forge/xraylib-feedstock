@@ -2,6 +2,8 @@
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./build-aux
 set -e -x
 
+export CI=true
+
 if [[ $(uname) == Darwin ]]; then
   export FCFLAGS="-isysroot $CONDA_BUILD_SYSROOT $FCFLAGS"
   export PATH="${PATH}:${RECIPE_DIR}/fake-bin"
