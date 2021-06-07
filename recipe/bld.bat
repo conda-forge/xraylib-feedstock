@@ -12,7 +12,7 @@ set ^"MESON_OPTIONS=^
   -Dfortran-bindings=disabled ^
   -Dpython-bindings=enabled ^
   -Dpython-numpy-bindings=enabled ^
-  -Dpython=python ^
+  -Dpython="%PYTHON%" ^
  ^"
 
 :: configure build using meson
