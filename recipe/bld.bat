@@ -1,6 +1,8 @@
 setlocal EnableDelayedExpansion
 @echo on
 
+set CI=true
+
 :: meson options
 set ^"MESON_OPTIONS=^
   --prefix="%LIBRARY_PREFIX%" ^
@@ -10,7 +12,7 @@ set ^"MESON_OPTIONS=^
   -Dfortran-bindings=disabled ^
   -Dpython-bindings=enabled ^
   -Dpython-numpy-bindings=enabled ^
-  -Dpython=python ^
+  -Dpython="%PYTHON%" ^
  ^"
 
 :: configure build using meson
