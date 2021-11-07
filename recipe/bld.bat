@@ -13,6 +13,8 @@ set ^"MESON_OPTIONS=^
   -Dpython-bindings=enabled ^
   -Dpython-numpy-bindings=enabled ^
   -Dpython="%PYTHON%" ^
+  -Dpython.platlibdir="%SP_DIR%" ^
+  -Dpython.purelibdir="%SP_DIR%" ^
  ^"
 
 :: configure build using meson
@@ -32,8 +34,3 @@ if errorlevel 1 exit 1
 
 @REM For some reason conda-build decides that the meson files in Scripts are new?
 del %PREFIX%\Scripts\meson* %PREFIX%\Scripts\wraptool*
-
-@REM Meson doesn't put the Python files in the right place.
-cd %LIBRARY_PREFIX%\lib\python*
-cd site-packages
-move *xraylib* %PREFIX%\lib\site-packages\

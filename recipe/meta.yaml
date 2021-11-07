@@ -9,7 +9,11 @@ source:
   sha256: 73fefb2c54b75f3ac2ff227d68fce910acdd8490edd7cd12967169edfe528b46
 
 build:
-  number: 0
+  number: 1
+  ignore_run_exports_from:
+    - {{ compiler('cxx') }}
+  run_exports:
+    - {{ pin_subpackage('xraylib', max_pin='x') }}
 
 requirements:
   build:
@@ -31,6 +35,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
+    - ucrt  # [win]
 
 test:
   commands:
