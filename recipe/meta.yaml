@@ -1,4 +1,4 @@
-{% set version = "4.1.1" %}
+{% set version = "4.1.2" %}
 
 package:
   name: xraylib
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://lvserver.ugent.be/xraylib/xraylib-{{ version }}.tar.gz
-  sha256: 73fefb2c54b75f3ac2ff227d68fce910acdd8490edd7cd12967169edfe528b46
+  sha256: d0165fa1a7bf63760b94650c26ff3783020c652b96fdf8373eb758af663a7c13
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
   run_exports:
