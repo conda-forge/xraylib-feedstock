@@ -9,7 +9,7 @@ source:
   sha256: d0165fa1a7bf63760b94650c26ff3783020c652b96fdf8373eb758af663a7c13
 
 build:
-  number: 1
+  number: 2
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
   run_exports:
