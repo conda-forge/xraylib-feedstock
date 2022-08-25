@@ -22,7 +22,8 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - pkg-config  # [unix]
     - cython
-    - meson
+    # see https://github.com/mesonbuild/meson/issues/10737
+    - meson <0.63
     - ninja
     - swig
     - {{ compiler('fortran') }}  # [not win and not arm64]
