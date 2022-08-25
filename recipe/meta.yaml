@@ -1,4 +1,4 @@
-{% set version = "4.1.2" %}
+{% set version = "4.1.3" %}
 
 package:
   name: xraylib
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://lvserver.ugent.be/xraylib/xraylib-{{ version }}.tar.gz
-  sha256: d0165fa1a7bf63760b94650c26ff3783020c652b96fdf8373eb758af663a7c13
+  sha256: f280788e9d2d730a01c1031f41233d9926b67c89e4f3fdd7f43f408bb0d24770
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
   run_exports:
@@ -22,7 +22,8 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - pkg-config  # [unix]
     - cython
-    - meson
+    # see https://github.com/mesonbuild/meson/issues/10737
+    - meson <0.63
     - ninja
     - swig
     - {{ compiler('fortran') }}  # [not win and not arm64]
