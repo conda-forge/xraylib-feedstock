@@ -30,7 +30,6 @@ requirements:
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - clang  # [win]
   host:
     - python
     - setuptools
@@ -43,6 +42,7 @@ requirements:
 test:
   commands:
     - test -f $PREFIX/include/xraylib/xraylib.mod  # [unix]
+    - if not exist %LIBRARY_INC%\\xraylib\\xraylib.mod exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\pkgconfig\\libxrl.pc exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\xrl.lib exit 1  # [win]
     - if not exist %LIBRARY_INC%\\xraylib\\xraylib.h exit 1  # [win]
