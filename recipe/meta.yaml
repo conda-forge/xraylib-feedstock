@@ -9,7 +9,7 @@ source:
   sha256: f280788e9d2d730a01c1031f41233d9926b67c89e4f3fdd7f43f408bb0d24770
 
 build:
-  number: 0
+  number: 1
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
   run_exports:
@@ -26,9 +26,11 @@ requirements:
     - meson <0.63
     - ninja
     - swig
-    - {{ compiler('fortran') }}  # [not win and not arm64]
+    - {{ compiler('fortran') }}  # [unix and not arm64]
+    - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - clang  # [win]
   host:
     - python
     - setuptools
