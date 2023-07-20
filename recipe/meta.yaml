@@ -11,7 +11,7 @@ source:
     - meson-cython.patch
 
 build:
-  number: 3
+  number: 4
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
   run_exports:
@@ -28,7 +28,7 @@ requirements:
     - meson <0.63
     - ninja
     - swig
-    - {{ compiler('fortran') }}  # [unix and not arm64]
+    - {{ compiler('fortran') }}  # [unix]
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}

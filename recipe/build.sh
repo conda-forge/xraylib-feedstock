@@ -10,9 +10,6 @@ fi
 
 USE_FORTRAN=enabled
 
-if [[ "$target_platform" == "osx-arm64" && "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
-  USE_FORTRAN=disabled
-fi
 
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   # Bash scripts with shebang lines calling bash scripts
@@ -24,6 +21,7 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
   echo '#!/usr/bin/env python' > $BUILD_PREFIX/bin/cython
   cat $BUILD_PREFIX/bin/cython.bak >> $BUILD_PREFIX/bin/cython
   chmod a+x $BUILD_PREFIX/bin/cython
+  ln -sf $BUILD_PREFIX/bin/$CONDA_TOOLCHAIN_HOST-gfortran $BUILD_PREFIX/bin/gfortran
 fi
 
 if [ -z "$MESON_ARGS" ]; then
