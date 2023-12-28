@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/tschoonj/xraylib/releases/download/xraylib-{{ version }}/xraylib-{{ version }}.tar.gz
   sha256: b0d77b186e3bf83cc5be29d687cf6225f94276233f257d4f855e9ef61a9c14d5
-  patches:
-    - meson-cython.patch
 
 build:
   number: 0
@@ -24,8 +22,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - pkg-config  # [unix]
     - cython
-    # see https://github.com/mesonbuild/meson/issues/10737
-    - meson <0.63
+    - meson
     - ninja
     - swig
     - {{ compiler('fortran') }}  # [unix]
