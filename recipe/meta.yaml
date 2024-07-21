@@ -7,9 +7,11 @@ package:
 source:
   url: https://github.com/tschoonj/xraylib/releases/download/xraylib-{{ version }}/xraylib-{{ version }}.tar.gz
   sha256: b0d77b186e3bf83cc5be29d687cf6225f94276233f257d4f855e9ef61a9c14d5
+  patches:
+    - numpy-2.patch
 
 build:
-  number: 0
+  number: 1
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
   run_exports:
@@ -19,7 +21,7 @@ requirements:
   build:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy
     - pkg-config  # [unix]
     - cython
     - meson
@@ -28,6 +30,7 @@ requirements:
     - {{ compiler('fortran') }}  # [unix]
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -35,7 +38,6 @@ requirements:
     - numpy
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - ucrt  # [win]
 
 test:
