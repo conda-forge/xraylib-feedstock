@@ -12,7 +12,6 @@ set ^"MESON_OPTIONS=^
   -Dfortran-bindings=enabled ^
   -Dpython-bindings=enabled ^
   -Dpython-numpy-bindings=enabled ^
-  -Dpython="%PYTHON%" ^
   -Dpython.platlibdir="%SP_DIR%" ^
   -Dpython.purelibdir="%SP_DIR%" ^
  ^"
