@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/tschoonj/xraylib/releases/download/xraylib-{{ version }}/xraylib-{{ version }}.tar.gz
-  sha256: 7fb125c2047280611b3d210e892a29d2b1761efeae2f3a0b3699a5dd33349cdf
+  url: https://github.com/tschoonj/xraylib/releases/download/xraylib-{{ version }}/xraylib-{{ version }}.tar.xz
+  sha256: 98c171a7c75f46adf9c95a74d0e9d03b88e0122225683961032a96e59e397926
 
 build:
   number: 0
