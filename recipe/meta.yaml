@@ -1,17 +1,17 @@
-{% set version = "4.1.4" %}
+{% set version = "4.1.5" %}
 
 package:
   name: xraylib
   version: {{ version }}
 
 source:
-  url: https://github.com/tschoonj/xraylib/releases/download/xraylib-{{ version }}/xraylib-{{ version }}.tar.gz
-  sha256: b0d77b186e3bf83cc5be29d687cf6225f94276233f257d4f855e9ef61a9c14d5
+  url: https://github.com/tschoonj/xraylib/releases/download/xraylib-{{ version }}/xraylib-{{ version }}.tar.xz
+  sha256: 98c171a7c75f46adf9c95a74d0e9d03b88e0122225683961032a96e59e397926
   patches:
     - numpy-2.patch
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
   run_exports:
