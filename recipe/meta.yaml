@@ -21,10 +21,9 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - numpy
     - pkg-config  # [unix]
-    - cython
-    - meson
     - ninja
     - swig
+    - cython
     - {{ compiler('fortran') }}  # [unix]
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ compiler('c') }}
@@ -32,6 +31,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
+    - meson
     - setuptools
     - numpy
   run:
