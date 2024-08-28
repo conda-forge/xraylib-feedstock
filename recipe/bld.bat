@@ -9,10 +9,9 @@ set ^"MESON_OPTIONS=^
   --default-library=shared ^
   --buildtype=release ^
   --backend=ninja ^
-  -Dfortran-bindings=enabled ^
+  -Dfortran-bindings=disabled ^
   -Dpython-bindings=enabled ^
   -Dpython-numpy-bindings=enabled ^
-  -Dpython="%PYTHON%" ^
   -Dpython.platlibdir="%SP_DIR%" ^
   -Dpython.purelibdir="%SP_DIR%" ^
  ^"

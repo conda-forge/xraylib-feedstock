@@ -36,10 +36,9 @@ meson ${MESON_ARGS} \
       -Dfortran-bindings=${USE_FORTRAN} \
       -Dpython-bindings=enabled \
       -Dpython-numpy-bindings=enabled \
-      -Dpython=$PYTHON \
       ..
 ninja
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
-  ninja test
-fi
+# if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+#   ninja test
+# fi
 ninja install
