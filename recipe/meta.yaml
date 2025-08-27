@@ -1,4 +1,4 @@
-{% set version = "4.1.5" %}
+{% set version = "4.2.0" %}
 
 package:
   name: xraylib
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/tschoonj/xraylib/releases/download/xraylib-{{ version }}/xraylib-{{ version }}.tar.xz
-  sha256: 98c171a7c75f46adf9c95a74d0e9d03b88e0122225683961032a96e59e397926
+  sha256: 1ec79973e2abcc372e26add7bd911f54c741699511e16fb64841f1c809969ee2
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports_from:
     - {{ compiler('cxx') }}
   run_exports:
