@@ -1,4 +1,4 @@
-{% set version = "4.2.1" %}
+{% set version = "4.3.0" %}
 
 package:
   name: xraylib-split
@@ -6,14 +6,10 @@ package:
 
 source:
   url: https://github.com/tschoonj/xraylib/releases/download/xraylib-{{ version }}/xraylib-{{ version }}.tar.xz
-  sha256: 64f3ffddb327f265c13f05d17b356125a85634d0295be0f0d07bf4b7f9daeb77
-  patches:
-    # meson's python.extension_module() requires a scalar install_tag;
-    # backport of upstream 3b53dae2ad9c382409af146fa9d3037953452fed
-    - 0001-Fix-meson-bug.patch
+  sha256: a86a8f217d7945e6de8192cc5850869e63123eb726c4d5ebae95f5316ee048d6
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
