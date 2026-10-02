@@ -9,7 +9,7 @@ source:
   sha256: a86a8f217d7945e6de8192cc5850869e63123eb726c4d5ebae95f5316ee048d6
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -20,7 +20,7 @@ requirements:
     - pkg-config  # [unix]
     - ninja
     - swig
-    - {{ compiler('fortran') }}  # [unix]
+    - {{ compiler("fortran") }}
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -48,7 +48,7 @@ outputs:
       - Library/include/xraylib/*         # [win]
     requirements:
       build:
-        - {{ compiler("fortran") }}  # [unix]
+        - {{ compiler("fortran") }}
         - {{ compiler("c") }}
         - {{ stdlib("c") }}
         - {{ compiler("cxx") }}
@@ -58,7 +58,7 @@ outputs:
       requires:
         - {{ compiler('c') }}        # [unix]
         - {{ compiler('cxx') }}      # [unix]
-        - {{ compiler('fortran') }}  # [unix]
+        - {{ compiler("fortran") }}
         - {{ stdlib("c") }}          # [unix]
         - pkg-config                 # [unix]
       files:
